@@ -1,0 +1,25 @@
+{
+  "name": "<%= dasherize(name) %>",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "url"
+  },
+  "author": {
+    "name": "TODO",
+    "email": "TODO"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "main": "./bundles/<%= dasherize(name) %>.umd.js",
+  "es2015": "./esm2015/<%= dasherize(name) %>.js",
+  "module": "./esm5/<%= dasherize(name) %>.es5.js",
+  "typings": "./<%= dasherize(name) %>.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^5.0.0",
+    "@angular/common": "^5.0.0",
+    "@angular/http": "^5.0.0"
+  }
+}

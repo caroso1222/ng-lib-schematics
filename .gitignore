@@ -1,0 +1,43 @@
+# Outputs
+/dist
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/
+
+# dependencies
+/node_modules
+
+# Misc
+npm-debug.log*
+yarn-error.log*
+
+# Mac OSX Finder files.
+**/.DS_Store
+.DS_Store
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db

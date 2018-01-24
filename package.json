@@ -1,0 +1,37 @@
+{
+  "name": "ng-lib-schematics",
+  "version": "0.1.0",
+  "description": "Angular schematics to easily create Angular libraries",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp",
+    "test": "npm run build && jasmine **/*_spec.js"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "Carlos Roso <ce.roso398@gmail.com>",
+  "private": true,
+  "license": "MIT",
+  "schematics": "./collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^0.0.25",
+    "@angular-devkit/schematics": "^0.0.48",
+    "@types/jasmine": "^2.6.0",
+    "@types/node": "^8.0.31",
+    "ng-schematics-utils": "1.0.0-beta.2",
+    "jasmine": "^2.8.0",
+    "typescript": "^2.5.2"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp-typescript": "^3.2.3",
+    "concurrently": "^3.5.1",
+    "gulp-json-editor": "^2.2.1",
+    "gulp": "^3.9.1",
+    "jasmine": "^2.8.0",
+    "gulp-tsc": "^1.3.2",
+    "gulp-watch": "^4.3.11",
+    "gulp-src-ordered-globs": "^1.0.3"
+  }
+}
