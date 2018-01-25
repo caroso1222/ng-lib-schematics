@@ -31,7 +31,20 @@ const DEV_DEPENDENCIES = [
   { name: 'gulp-if', version: '^2.0.2' },
   { name: 'gulp-replace', version: '^0.6.1' },
   { name: 'gulp-sass', version: '^3.1.0' },
+  { name: 'path', version: '^0.12.7' },
+  { name: 'rimraf', version: '^2.6.2' },
+  { name: 'rollup', version: '^0.54.0' },
+  { name: 'run-sequence', version: '^2.2.1' },
+  { name: 'sorcery', version: '^0.10.0' },
+  { name: 'sync-json', version: '^1.0.2' },
+  { name: 'through2', version: '^2.0.3' },
 ];
+
+
+
+
+
+
 
 export default function LibStandalone(options: LibraryOptions): Rule {
   options.path = options.path ? normalize(options.path) : options.path;
@@ -144,11 +157,11 @@ function appendDependenciesInAstObject(
     const dep = dependencies[i];
     textToInsert += 
     '  '
-    + `"${dep.name}": ${JSON.stringify(dep.version, null, 2).replace(/\n/g, indentStr)}`
-    + indentStr.slice(0, -2);
-    if (i === dependencies.length) {
+    + `"${dep.name}": ${JSON.stringify(dep.version, null, 2).replace(/\n/g, indentStr)}`;
+    if (i < dependencies.length - 1) {
       textToInsert += ',';
     }
+    textToInsert += indentStr.slice(0, -2);
   }
 
   recorder.insertLeft(
@@ -184,19 +197,19 @@ function addDevDependencies(): Rule {
     const dependencyToken = getJsonToken(packageJsonAst, 'devDependencies');
     if (dependencyToken) {
       const recorder = tree.beginUpdate(packageJsonPath);
+      const dependenciesToInsert = [];
+
       // analyze the devDependencies and add only the missing ones
-      // for (const dep of DEV_DEPENDENCIES) {
-      //   if (currentDevDependencies.indexOf(dep.name) === -1) {
-      //     appendPropertyInAstObject(
-      //       recorder,
-      //       dependencyToken,
-      //       dep.name,
-      //       dep.version
-      //     );
-      //   }
-      // }
-      appendDependenciesInAstObject(recorder, dependencyToken, DEV_DEPENDENCIES);
+      for (const dep of DEV_DEPENDENCIES) {
+        if (currentDevDependencies.indexOf(dep.name) === -1) {
+          dependenciesToInsert.push(dep);
+        }
+      }
+      appendDependenciesInAstObject(recorder, dependencyToken, dependenciesToInsert);
       tree.commitUpdate(recorder);
+
+      context.logger.warn('Please run "npm i" to install new the devDependencies');
+
       return tree;
     }
   }
