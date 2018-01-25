@@ -1,4 +1,4 @@
-export * from './sample.module';
-export * from './sample.component';
-export * from './sample.service';
-export * from './sample.module';
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class SampleService { }

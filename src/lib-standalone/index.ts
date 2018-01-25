@@ -40,12 +40,6 @@ const DEV_DEPENDENCIES = [
   { name: 'through2', version: '^2.0.3' },
 ];
 
-
-
-
-
-
-
 export default function LibStandalone(options: LibraryOptions): Rule {
   options.path = options.path ? normalize(options.path) : options.path;
 
