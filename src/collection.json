@@ -3,7 +3,8 @@
   "schematics": {
     "lib-standalone": {
       "description": "A blank schematic.",
-      "factory": "./ng-lib-schematics/index"
+      "factory": "./lib-standalone/index",
+      "schema": "./lib-standalone/schema.json"
     }
   }
 }
