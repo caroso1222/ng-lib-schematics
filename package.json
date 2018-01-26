@@ -1,6 +1,6 @@
 {
   "name": "ng-lib-schematics",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Angular schematics to easily create Angular libraries",
   "scripts": {
     "build": "gulp build",
