@@ -65,10 +65,10 @@ export default function LibStandalone(options: LibraryOptions): Rule {
   const gulpfile = url("./files/gulpfile");
 
   return chain([
-    // mergeWith(templateSource),
-    // mergeWith(gulpfile),
+    mergeWith(templateSource),
+    mergeWith(gulpfile),
     addScriptsToManifest(),
-    // addDevDependenciesToManifest()
+    addDevDependenciesToManifest()
   ]);
 }
 
