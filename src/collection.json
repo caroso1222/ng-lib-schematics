@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "lib-standalone": {
-      "description": "A blank schematic.",
+      "description": "Create an Angular library.",
       "factory": "./lib-standalone/index",
       "schema": "./lib-standalone/schema.json"
     }
