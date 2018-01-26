@@ -2,14 +2,14 @@
 
 Create Angular libraries in no time using [Schematics](https://github.com/angular/devkit). Think of `ng generate component`, but for libraries.
 
-## Features
+### Features
 * Easily generate libraries from scratch or within your existing Angular project. 
 * Release a build that follows Angular standards: UMD, ES5 and ES2015 bundles + typings.
 * Seemless integration with Angular CLI. Your library playground will just be your well known Angular app.
 * Test your library using karma + jasmine as you normally do in your Angular apps
 * Support for dry run
 
-## Installation
+### Installation
 1. It's recommended to install the schematics globally because you'll likely use it to create projects from scratch where no `node_modules` is yet available.
 ```
 npm i -g ng-lib-schematics
@@ -20,7 +20,7 @@ npm i -g ng-lib-schematics
 npm i -g @angular-devkit/core @angular-devkit/schematics-cli
 ```
  
-## Basic Usage
+### Basic Usage
 
 This schematic will generate the library inside of an existing Angular project. If you already have a project in which you want to include your library then you can skip step 1.
 
@@ -48,7 +48,7 @@ imports: [ SampleModule ]
 
 **Note:** Make sure you run the schematics in dry run mode first to know upfront what this thing will do to your project. Once you get comfortable with all the changes you can run the schematics again without dry run. To dry run the schematic simply append the `--dry-run` flag to the command in step 2.
 
-## Building and publishing your library
+### Building and publishing your library
 
 1. `npm run build:lib` 
 2. `cd dist`
@@ -58,7 +58,7 @@ imports: [ SampleModule ]
 1. If you already have an npm script named `build:lib` in your project, then you'll have to manually run `gulp --gulpfile gulpfile.lib.js` to build the library.
 2. TODO sync version
 
-## Generated files
+### Generated files
 
 It's important that you know what this schematic will do and how your project will look like after applying it:
 
@@ -71,11 +71,11 @@ It's important that you know what this schematic will do and how your project wi
   a. `"build:lib": "gulp --gulpfile gulpfile.lib.js"`: Script to build the release artifacts of your library.
   b. `"version": "sync-json -v --property version --source package.json src/lib/package.json"`: Version hook to sync versions between your root `package.json` and `src/lib/package.json`. This will allow you to run `npm version <type>` at the root of your project and still have your library version up to date.
 
-## Contributing
+### Contributing
 
 Thanks for even thinking about contributing. Open up issues or PRs and we'll discuss about it.
 
-### Testing your schematics build
+#### Testing your schematics build
 
 1. Fork the project
 2. Install dependencies `npm i`
@@ -83,3 +83,17 @@ Thanks for even thinking about contributing. Open up issues or PRs and we'll dis
 4. `cd` into `dist` and run `npm link`. At this point, `ng-lib-schematics` is symlinked to your global `node_modules.`
 5. Create a dummy Angular project `ng new lib-test`
 6. You can now run `schematics ng-lib-schematics:lib-standalone --name <library-name>`
+
+### Hall of fame
+
+Find below some of the libraries built on top of these schematics:
+
+- Nothing here yet. Open a PR and shoot your library right here!
+
+### Credits
+
+I took a bunch of ideas from the [Yeoman's Angular library generator](https://github.com/jvandemo/generator-angular2-library) by [Jurgen Van de Moere](https://twitter.com/jvandemo). Feel free to use whatever works best for you, both Schematics and Yeoman will get you to the same exact point.
+
+### Licence
+
+MIT
