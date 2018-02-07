@@ -2,6 +2,10 @@
   "name": "ng-lib-schematics",
   "version": "0.1.1",
   "description": "Angular schematics to easily create Angular libraries",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caroso1222/ng-lib-schematics"
+  },
   "scripts": {
     "build": "gulp build",
     "watch": "gulp",
