@@ -43,8 +43,11 @@ npm i
 ```typescript
 import { SampleModule } from '../lib';
 ...
-imports: [ SampleModule ]
+imports: [ BrowserModule, SampleModule ]
 ```
+
+5. Start using it! Go to your `app.component.html` and add the sample component:`<sample-component></sample-component>`. It should render this:
+> <img src="https://image.ibb.co/ccwCXc/screenshot_localhost_4200_2018_02_26_10_59_58.png" alt="sample component rendering" width="20%">
 
 **Note:** Make sure you run the schematics in dry run mode first to know upfront what this thing will do to your project. Once you get comfortable with all the changes you can run the schematics again without dry run. To dry run the schematic simply append the `--dry-run` flag to the command in step 2.
 
