@@ -14,7 +14,7 @@ import {
   UpdateRecorder,
 } from '@angular-devkit/schematics';
 import { Schema as LibraryOptions } from './schema';
-import { 
+import {
   normalize,
   parseJsonAst,
   JsonAstObject,
@@ -38,6 +38,7 @@ const DEV_DEPENDENCIES = [
   { name: 'sorcery', version: '^0.10.0' },
   { name: 'sync-json', version: '^1.0.2' },
   { name: 'through2', version: '^2.0.3' },
+  { name: 'gulp-autoprefixer', version: '^5.0.0' },
 ];
 
 const NPM_SCRIPTS = [
@@ -89,13 +90,13 @@ function addScriptsToManifest(): Rule {
     const parsedScripts = JSON.parse(packageJsonContent.toString('utf-8')).scripts;
 
     if (parsedScripts['build:lib']) {
-      context.logger.warn('Existing \'build:lib\' npm script found.' + 
+      context.logger.warn('Existing \'build:lib\' npm script found.' +
       '\nYou will need to run the build command as ' +
       '\'gulp --gulpfile gulpfile.lib.js\'`');
     }
 
     if (parsedScripts.version) {
-      context.logger.warn('Existing \'version\' npm script found.' + 
+      context.logger.warn('Existing \'version\' npm script found.' +
       '\nYou will need to manually sync the versions on ./package.json and ' +
       '\'./src/lib/package.json\'`');
     }
@@ -207,7 +208,7 @@ function verifyPackageJson(
   fileContent: Buffer | null
 ): fileContent is Buffer {
   if (!fileContent) {
-    context.logger.warn(`package.json not found. You will need to run 
+    context.logger.warn(`package.json not found. You will need to run
     the build command as 'gulp --gulpfile gulpfile.lib.js'`);
     return false;
   }
@@ -254,7 +255,7 @@ function appendPropsToAstObject(
   let textToInsert = '';
   for (let i = 0; i < dependencies.length; i++) {
     const dep = dependencies[i];
-    textToInsert += 
+    textToInsert +=
     '  '
     + `"${dep.name}": ${JSON.stringify(dep.version, null, 2).replace(/\n/g, indentStr)}`;
     if (i < dependencies.length - 1) {
