@@ -8,6 +8,7 @@ Create Angular libraries in no time using [Schematics](https://github.com/angula
 * Seemless integration with Angular CLI. Your library playground will just be your well known Angular app.
 * Test your library using karma + jasmine as you normally do in your Angular apps
 * Support for dry run
+* SASS and [autoprefixer](https://github.com/postcss/autoprefixer) support.
 
 ### Installation
 1. It's recommended to install the schematics globally because you'll likely use it to create projects from scratch where no `node_modules` is yet available.
