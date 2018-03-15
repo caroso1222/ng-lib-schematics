@@ -92,7 +92,7 @@ Thanks for even thinking about contributing. Open up issues or PRs and we'll dis
 
 Find below some of the libraries built on top of these schematics:
 
-- Nothing here yet. Open a PR and shoot your library right here!
+- [ngx-date-fns](https://github.com/joanllenas/ngx-date-fns): date-fns pipes for Angular 2.0 and above.
 
 ### Credits
 
