@@ -94,6 +94,7 @@ Find below some of the libraries built on top of these schematics:
 
 - [ngx-date-fns](https://github.com/joanllenas/ngx-date-fns): date-fns pipes for Angular 2.0 and above.
 - [ngx-cool-dialogs](https://github.com/caroso1222/ngx-cool-dialogs): Alert, confirm and prompt dialogs for Angular.
+- [ngx-content-loader](https://github.com/NetanelBasal/ngx-content-loader): SVG component to create placeholder loading, like Facebook cards loading.
 
 ### Credits
 
